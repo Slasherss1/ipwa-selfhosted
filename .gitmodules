@@ -1,0 +1,6 @@
+[submodule "ipwa"]
+	path = ipwa
+	url = https://github.com/Slasherss1/ipwa.git
+[submodule "ipwa-backend"]
+	path = ipwa-backend
+	url = https://github.com/Slasherss1/ipwa-backend.git
