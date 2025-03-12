@@ -1,3 +1,10 @@
+## Submodules
+You need to pull the submodules
+```
+git submodule init
+git submodule update
+```
+
 ## Certbot
 The project is adjusted to use of certbot.  
 This command might come in handy:  
