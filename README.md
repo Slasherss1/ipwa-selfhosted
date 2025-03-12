@@ -9,9 +9,9 @@ git submodule update
 The project is adjusted to use of certbot.  
 This command might come in handy:  
 ```
-docker run --rm --name certbot -v "./cert/www:/var/www/certbot/:rw" -v "./cert/conf:/etc/letsencrypt/:rw" certbot/certbot certonly --webroot --webroot-path /var/www/certbot/ -d <DOMAIN NAME>
+docker run --rm --name certbot -v "<PATH TO ./cert/www>:/var/www/certbot/:rw" -v "<PATH TO ./cert/conf>:/etc/letsencrypt/:rw" certbot/certbot certonly --webroot --webroot-path /var/www/certbot/ -d <DOMAIN NAME>
 ```
-Replace `<DOMAIN NAME>` at the end with your domain name.
+Replace `<DOMAIN NAME>` at the end with your domain name and add proper absolute `PATHS`.
 
 ## Things to change
 Change following files:
