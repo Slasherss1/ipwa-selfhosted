@@ -1,0 +1,22 @@
+{
+    "keyrooms": [],
+    "cleanThings": [],
+    "rooms": [],
+    "menu": {
+      "defaultItems": {
+        "sn": [
+          "Pieczywo 2",
+          "Masło 1",
+          "Herbata",
+          "Cytryna"
+        ],
+        "kol": [
+          "Pieczywo 2",
+          "Masło 1",
+          "Dżem",
+          "Herbata",
+          "Cytryna"
+        ]
+      }
+    }
+  }

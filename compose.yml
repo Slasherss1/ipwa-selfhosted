@@ -1,0 +1,37 @@
+services:
+  front:
+    build: ./ipwa
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./cert/www/:/var/www/certbot/:ro
+      - ./cert/conf/:/cert/:ro
+    depends_on:
+      - api
+    ports:
+      - 80:80
+      - 443:443
+  api:
+    build: ./ipwa-backend
+    restart: unless-stopped
+    env_file:
+      - .env
+    expose:
+      - 8080
+    depends_on:
+      - mongodb
+    volumes:
+      - ./config/:/app/config/
+      - ./cert/conf/:/cert/:ro
+  mongodb:
+    image: mongo:latest
+    restart: unless-stopped
+    expose:
+      - 27017
+    ports:
+      - "127.0.0.1:27017:27017"
+    volumes:
+      - mongodb:/data/db
+volumes:
+  mongodb:

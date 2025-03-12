@@ -1,0 +1,8 @@
+{
+    "news": true,
+    "menu": true,
+    "notif": false,
+    "groups": true,
+    "clean": true,
+    "key": true
+}
