@@ -12,6 +12,7 @@ Change following files:
     | --- | --- |
     | `DOMAIN=` | Insert final domain name |
     | `VAPID=` | Used for notifications. Currently broken. |
+    | `EMAIL=` | Insert your email. Needed for SSL. |
     | `SECRET=` | Used for encrypting sessions. |
 - `./config/`:
     - `keys.json`:
