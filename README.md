@@ -5,20 +5,12 @@ git submodule init
 git submodule update
 ```
 
-## Certbot
-The project is adjusted to use of certbot.  
-This command might come in handy:  
-```
-docker run --rm --name certbot -v "<PATH TO ./cert/www>:/var/www/certbot/:rw" -v "<PATH TO ./cert/conf>:/etc/letsencrypt/:rw" certbot/certbot certonly --webroot --webroot-path /var/www/certbot/ -d <DOMAIN NAME>
-```
-Replace `<DOMAIN NAME>` at the end with your domain name and add proper absolute `PATHS`.
-
 ## Things to change
 Change following files:
 - `.env`:
     | What to change | Note |
     | --- | --- |
-    | `ORIGIN=` | Insert final domain name |
+    | `DOMAIN=` | Insert final domain name |
     | `VAPID=` | Used for notifications. Currently broken. |
     | `SECRET=` | Used for encrypting sessions. |
 - `./config/`:
@@ -32,18 +24,4 @@ Change following files:
     - `usettings.json`:
         Most things can be changed on the fly inside of the app. `menu` is not done yet.
 - `./ipwa`:
-    - `Dockerfile`:
-        | Line | What to change | Note |
-        | --- | --- | --- |
-        | 7 | ``apiEndpoint: `http://localhost/api`,`` | Change url to backend endpoint |
-
-    - `httpd.conf`:
-        | Line | What to change | Note |
-        | --- | --- | --- |
-        | 233 | `ServerAdmin you@example.com` | Change to webmaster's email |
-        | 242 | `ServerName www.example.com` | Change to final domain name |
-        | 312 | `ServerName www.example.com` | See above |
-        | 314 | `SSLCertificateFile /cert/live/<domain>/cert.pem` | Change `<domain>` to the domain name above |
-        | 315 | `SSLCertificateKeyFile /cert/live/<domain>/privkey.pem` | Change `<domain>` to the domain name above |
-        | 316 | `SSLCertificateChainFile /cert/live/<domain>/chain.pem` | Change `<domain>` to the domain name above |
     - (Optional) `src/assets/icons/*` - You can change the icons to your own 
