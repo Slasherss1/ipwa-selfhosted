@@ -5,8 +5,7 @@ services:
     env_file:
       - .env
     volumes:
-      - ./cert/www/:/var/www/certbot/:ro
-      - ./cert/conf/:/cert/:ro
+      - cert:/etc/letsencrypt
     depends_on:
       - api
     ports:
@@ -23,7 +22,6 @@ services:
       - mongodb
     volumes:
       - ./config/:/app/config/
-      - ./cert/conf/:/cert/:ro
   mongodb:
     image: mongo:latest
     restart: unless-stopped
@@ -35,3 +33,4 @@ services:
       - mongodb:/data/db
 volumes:
   mongodb:
+  cert:
