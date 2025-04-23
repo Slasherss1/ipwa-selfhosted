@@ -11,6 +11,8 @@ services:
     ports:
       - 80:80
       - 443:443
+    links:
+      - api
   api:
     build: ./ipwa-backend
     restart: unless-stopped
@@ -22,6 +24,8 @@ services:
       - mongodb
     volumes:
       - ./config/:/app/config/
+    links:
+      - mongodb
   mongodb:
     image: mongo:latest
     restart: unless-stopped
