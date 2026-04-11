@@ -16,7 +16,7 @@
         {
             "label": "Backend: Dev",
             "type": "shell",
-            "command": "trap 'docker compose stop mongodb' SIGINT EXIT; docker compose up -d mongodb && source $HOME/.nvm/nvm.sh && nvm use && ATLAS_URI=mongodb://localhost:27017/ipwa SECRET=CHANGE_ME npx tsx watch .",
+            "command": "trap 'docker compose stop mongodb' SIGINT EXIT; docker compose up -d mongodb && source $HOME/.nvm/nvm.sh && nvm use && ATLAS_URI=mongodb://localhost:27017/ipwa SECRET=CHANGE_ME npx tsx watch --inspect .",
             "options": {
                 "cwd": "${workspaceFolder}/ipwa-backend"
             },
